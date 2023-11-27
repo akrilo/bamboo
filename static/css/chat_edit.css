@@ -1,0 +1,234 @@
+@font-face {
+    font-family: Roboto-Bold;
+    src: local(Roboto-Bold), url(../font/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Light;
+    src: local(Roboto-Light), url(../font/Roboto-Light.ttf);
+}
+
+body {
+    min-height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    background: url(../images/greeting.jpg) center no-repeat;
+    background-size:100% 100%;
+    overflow: hidden;
+    font-family: Roboto-Light;
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#main-section {
+    background: #2d4a1a;
+    width: 1100px;
+    height: 540px;
+    margin: auto;
+    border-radius: 20px;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+}
+
+#hback {
+    display: flex;
+    text-align: start;
+}
+
+.edit-section {
+    display: flex;
+    text-align: start;
+}
+
+.conference-data {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    margin-left: 20px;
+}
+
+.data-row {
+    margin-bottom: 10px;
+}
+
+.name-row {
+    margin-right: 10px;
+}
+
+.conference-members {
+    border-radius: 10px;
+    width: 400px;
+    height: 250px;
+    padding: 5px;
+    overflow-y: auto;
+    background-color: #699b2c;
+}
+
+.conference-members::-webkit-scrollbar {
+    width: 10px;
+    background-color: #699b2c;
+    border-radius: 20px;
+}
+
+.conference-members::-webkit-scrollbar-track {
+    background: none;
+}
+
+.conference-members::-webkit-scrollbar-thumb {
+    background-color: #b8cf69;
+    border-radius: 20px;
+    border: 1px solid #48575e;
+}
+
+#members {
+    text-align: center;
+    height: 10px;
+}
+
+.change-form {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    margin-right: 20px;
+}
+
+.line {
+    margin: 20px 0px;
+    border-bottom: 1px solid #fff;
+    border-color: #699b2c;
+}
+
+hr {
+    width: 0px;
+    border-width: 0.1px;
+    border-color: #699b2c;
+}
+
+h2 {
+    font-family: Roboto-Bold;
+    margin: 10px 280px;
+    align-self: center;
+}
+
+p {
+    margin: 0px 0px 10px;
+}
+
+#back {
+    border: 0;
+    outline: none;
+    font-size: 20px;
+    background: #699b2c;
+    color: #ffffff;
+    border-radius: 20px;
+    text-align:center;
+    width: 110px;
+    height: 35px;
+    cursor: pointer;
+    align-self: center;
+    margin-bottom: 7px;
+}
+
+#back:hover,
+#back:focus {
+    background: #87af56;
+}
+
+#back a:link,
+#back a:visited,
+#back a:active {
+    color: #ffffff;
+    font-family: Roboto-Light;
+    text-decoration: none;
+}
+
+#delete_button {
+    border: 0;
+    outline: none;
+    font-size: 20px;
+    background: #699b2c;
+    color: #ffffff;
+    border-radius: 20px;
+    width: 120px;
+    height: 40px;
+    cursor: pointer;
+}
+
+#delete_button:hover,
+#delete_button:focus {
+    background: #87af56;
+}
+
+#btn {
+    border: 0;
+    outline: none;
+    font-size: 20px;
+    background: #699b2c;
+    color: #ffffff;
+    border-radius: 20px;
+    width: 270px;
+    height: 40px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#btn:hover,
+#btn:focus {
+    background: #87af56;
+}
+
+#input-area {
+    overflow: hidden;
+    font-size: 16px;
+    padding: 5px 10px;
+    border: 0px solid #ffffff;
+    color: #ffffff;
+    border-radius: 7px;
+    background-color: #699b2c;
+    margin-left: 10px;
+    resize: none;
+}
+
+input:focus,
+textarea:focus {
+    outline: 0;
+    border-color: #ffffff;
+}
+
+textarea {
+    border: 2px solid #ffffff;
+    resize: vertical;
+}
+
+#input-area::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.671);
+}
+
+#input-area::-moz-placeholder {
+    color: rgba(255, 255, 255, 0.671);
+}
+
+.flash {
+    width: 600px;
+    height: 50px;
+    margin: 20px auto;
+    padding-top: 20px;
+    border-radius: 50px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.success {
+    background-color: #99b43a;
+    font-family: Roboto-Light;
+    color: white;
+}
+
+.error {
+    background-color: #df7e8a;
+    font-family: Roboto-Light;
+    color: white;
+}

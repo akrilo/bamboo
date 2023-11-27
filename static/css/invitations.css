@@ -1,0 +1,141 @@
+@font-face {
+    font-family: Roboto-Bold;
+    src: local(Roboto-Bold), url(../font/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Light;
+    src: local(Roboto-Light), url(../font/Roboto-Light.ttf);
+}
+
+body {
+    min-height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    background: url(../images/greeting.jpg) center no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+    font-family: Roboto-Light;
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-section {
+    background: #2d4a1a;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    border-radius: 20px;
+}
+
+#main-main{
+    display: flex;
+    width: 500px;
+    height: 500px;
+}
+
+
+.invitations {
+    border-radius: 10px;
+    width: 480px;
+    height: 385px;
+    padding: 20px 7px 0px;
+    margin-right: 3px;
+    overflow-y: auto;
+}
+
+.invitations::-webkit-scrollbar {
+    width: 10px;
+    background-color: #699b2c;
+    border-radius: 20px;
+}
+
+.invitations::-webkit-scrollbar-track {
+    background: none;
+}
+
+.invitations::-webkit-scrollbar-thumb {
+    background-color: #b8cf69;
+    border-radius: 20px;
+    border: 1px solid #48575e;
+}
+
+.invite {
+    font-family: Roboto-Light;
+    border-radius: 20px;
+    border: 0;
+    background-color: #3e593e;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    padding: 10px 10px;
+    margin-bottom: 15px;
+    width: 450px;
+}
+
+h2 {
+    font-family: Roboto-Bold;
+    margin: 10px auto;
+    text-align:center;
+    font-size: 22px;
+}
+
+p {
+    margin: 0px 20px 0px;
+}
+
+
+
+#main-section i{
+    margin: auto 215px;
+    font-size: 20px;
+}
+#back {
+    border: 0;
+    outline: none;
+    font-size: 20px;
+    background: #699b2c;
+    border-radius: 20px;
+    margin: 5px 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#back:hover,
+#back:focus {
+    background: #87af56;
+}
+
+#back a:link,
+#back a:visited,
+#back a:active {
+    color: #ffffff;
+    font-family: Roboto-Light;
+    text-decoration: none;
+}
+
+.btn {
+    border: 0;
+    outline: none;
+    font-size: 20px;
+    background: #699b2c;
+    color: #ffffff;
+    border-radius: 20px;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 170px;
+}
+
+.btn:hover,
+.btn:focus {
+    background: #87af56;
+}
+
+.empty-conference {
+    margin: 20px 20px;
+}

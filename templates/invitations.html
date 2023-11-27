@@ -1,0 +1,35 @@
+{% extends "base.html" -%}
+
+{% block head -%}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/invitations.css') }}">
+{% endblock head -%}
+
+{% block content -%}
+<div id="main-main">
+    <button type="button" id="back"><a href="{{ url_for('profile') }}"><i class="fa-regular fa-circle-left"></i></a></button>
+    <div id="main-section">
+        <h2>ПРИГЛАШЕНИЯ</h2>
+    <div class="info">
+        <p>{{ current_user.get_lname() }} {{ current_user.get_fname() }}</p>
+        {% if invitations %}
+        <div class="invitations">
+            {% for invite in invitations -%}
+            <div class="invite">
+                <div class="invite-row">Конференция - {{ invite.title }}</div>
+                <div class="invite-row">Время активации - {{ invite.time }}</div>
+                <div class="invite-row">Инициатор - {{ invite.lastname }} {{ invite.firstname }}</div>
+                <button class="btn" id="accept_{{ invite.id }}" onclick="accept(this.id)">Принять</button>
+            </div>
+
+            {% endfor -%}
+        </div>
+        {% else %}
+        <p class="empty-conference">Вас пока не приглашали в конференции</p>
+        {% endif %}
+    </div>
+</div>
+</div>
+
+    <script src="{{ url_for('static', filename='js/invitations.js') }}"></script>
+{% endblock content -%}

@@ -1,0 +1,81 @@
+{% extends "base.html" -%}
+
+{% block head -%}
+{{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mainpage.css') }}">
+{% endblock head -%}
+
+{% block content -%}
+    {% for cat, msg in get_flashed_messages(True) -%}
+    <div class="flash {{ cat }}">{{ msg }}</div>
+    {% endfor %}
+
+    <div class="form">
+        <div class="menu">
+            <!--<div class="icon">
+                <img src="{{ url_for('static', filename='images/logo_outline.png') }}"
+                class="icon-img">
+            </div>-->
+            <h1>CAMBOOK</h1>
+            <div class="avatar">
+                <div class="av">
+                    <img src="{{ url_for('userava') }}" alt="USER_PIC" class="avatar-img">
+                </div>
+                <p id="name">{{ current_user.get_fname()}} {{ current_user.get_lname() }}</p>
+                <p id="email">{{ current_user.get_email()}}</p>
+                <a id="logout" href="{{ url_for('logout') }}">Выйти</a>
+                <ul class="fa-ul">
+                    <li class="tab">
+                        <a href="{{ url_for('settings') }}">
+                            <i class="fas fa-cog"></i>
+                            <span id="b">Настройка</span>
+                        </a>
+                    </li>
+                    <li class="tab">
+                        <a href="{{ url_for('create_conference') }}">
+                            <i class="fas fa-edit"></i>
+                            <span id="create">Создать конференцию</span>
+                        </a>
+                    </li>
+                    <li class="tab">
+                        <a href="{{ url_for('invitations') }}">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span id="invitations">Приглашения</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content">
+            <div id="conferences">
+                <ul id="confs">
+                {% for conf in conferences -%}
+                    <li class="{% if conf.is_active %}active{% else %}inactive{% endif %}">
+                        <div class="conference-info">
+                            <div class="info">
+                                <span class="title">{{ conf.title | title }}</span>
+                                <div class="description">{{ conf.description | title }}</div>
+                                <div class="creator-name">Инициатор: {{ conf.creator_lastname }} {{ conf.creator_firstname }}</div>
+                                <div class="conf-time">Время подключения: {{ conf.time_conf }}</div>
+                            </div>
+
+                            <div id="enter-change">
+                                {% if conf.is_active -%}
+                                <a href="/conference/{{ conf.id_conf }}" class="connect-to">Войти</a>
+                                {% endif -%}
+
+                                {% if id_user == conf.id_creator -%}
+                                <a href="/conference/{{ conf.id_conf }}/edit" class="change-conf"><i class="fas fa-edit"></i></a>
+                                {% endif -%}
+                            </div>
+
+                        </div>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/mainpage.js') }}"></script>
+{% endblock content -%} 

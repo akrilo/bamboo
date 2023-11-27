@@ -1,0 +1,27 @@
+<form action="{{ url_for('create_conference') }}" method="post">
+    {{ create_form.hidden_tag() }}
+    <h2>КОНФЕРЕНЦИЯ</h2>
+
+    <div id="create-form">
+        <div class="input-value">
+        {{ create_form.title_create.label() }}{{ create_form.title_create() }}
+    </div>
+    <div class="input-value" id="description">
+        {{ create_form.description_create.label() }}{{ create_form.description_create() }}
+    </div>
+    <div class="input-value">
+        {{ create_form.date_create.label() }}{{ create_form.date_create() }}
+    </div>
+    <div class="input-value">
+        {{ create_form.time_create.label() }}{{ create_form.time_create() }}
+    </div>
+    <div class="input-value">
+        {{ create_form.period_create.label() }}{{ create_form.period_create() }}
+    </div>
+    <div id="hback">
+        <div class="input-value">{{ create_form.submit_create() }}</div>
+        <button type="button" id="back"><a href="{{ url_for('profile') }}">Отменить</a></button>
+    </div>
+
+    </div>
+</form>

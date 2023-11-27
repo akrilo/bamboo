@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+{% block head -%}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b698d5043b.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+{% if title %}
+    <title>{{ title }}</title>
+{% else -%}
+    <title>Cambook page</title>
+{% endif -%}
+{% endblock head -%}
+</head>
+
+<body>
+    {% block content -%}
+    {% endblock content -%}
+</body>

@@ -1,0 +1,19 @@
+{% extends "base.html" -%}
+
+{% block head -%}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/create_conference.css') }}">
+{% endblock head -%}
+
+{% block content -%}
+    {% for cat, msg in get_flashed_messages(True) -%}
+        <div class="flash {{ cat }}">{{ msg }}</div>
+    {% endfor -%}
+    <div id="main-section">
+
+        
+        {% include "create_form.html" %}
+    
+    </div>
+
+{% endblock content -%}
